@@ -3,5 +3,3 @@
 
 ### Corona Virus Impact Visualization
 
-
-####Utkarsh Bhardwaj
