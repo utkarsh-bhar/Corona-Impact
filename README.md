@@ -3,3 +3,4 @@
 
 ### Corona Virus Impact Visualization
 
+Run Index.html
