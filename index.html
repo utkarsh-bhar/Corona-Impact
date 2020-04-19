@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title><?= htmlspecialchars($title); ?> - Quiz</title>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1, maximum-scale = 1">
+        <meta name="Description" content="" />
+        <meta name="Keywords" content="" />
+        <meta name="Author" content="" />
+        
+        <!--    Facebook Open Graph Tags    -->
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="" />
+        
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <!-- <link href="Content/main.css" rel="stylesheet" />
+        <link href="Content/styles.css" rel="stylesheet" /> -->
+        <link rel="shortcut icon" href="img/favicon.png" />
+        <style>    #myGallery{
+            position:relative;
+          }
+          #myGallery img{
+            display:none;
+            position:absolute;
+            top:0;
+            left:0;
+          }
+          #myGallery img.active{
+            display:block;
+          }
+      </style>
+    </head>
+    <body>
+        <!-- Header of the Page-->
+        <nav class="navbar navbar-default" role="navigation" style = "background-color:#020003">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">
+                      Title
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href = "#dashboard">Dashboard</a></li>
+                        <li><a href = "#"  id="sample" data-toggle="modal" data-target="#exampleModal">Spread of Corona</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Body -->
+        <div class = "container-fluid">
+          <div class="col-md-12" id="dashboard">
+              
+              <div class='tableauPlaceholder' id='viz1587318172662' style='position: relative'>
+                  <noscript>
+                    <a href='#'>
+                      <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CoronaImpactVisualization&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+                    </a>
+                  </noscript>
+                  <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='site_root' value='' />
+                    <param name='name' value='CoronaImpactVisualization&#47;Dashboard1' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CoronaImpactVisualization&#47;Dashboard1&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='filter' value='publish=yes' />
+                  </object>
+                </div>
+          </div>
+          <div class="col-md-12" id="spread">
+             
+          </div>
+          
+        </div>
+            <!-- Footer of the Page -->
+            <footer class="footer">
+                <hr />
+                <h4 style="text-align:center">Made by - Utkarsh Bhardwaj.</h4>
+            </footer>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document" style="width: 1366px">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Corona Impact</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" style="height: 814px; width: 74%; overflow: hidden; margin: 0 auto;">
+                        <div id="myGallery"></div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script src="jquery-2.1.4.min.js"></script>
+
+            <script type='text/javascript'>                    
+              var divElement = document.getElementById('viz1587318172662'); 
+              var vizElement = divElement.getElementsByTagName('object')[0];                    
+              if ( divElement.offsetWidth > 800 ) { 
+                vizElement.style.width='1366px';
+                vizElement.style.height='895px';
+              } else if ( divElement.offsetWidth > 500 ) { 
+                vizElement.style.width='1366px';
+                vizElement.style.height='895px';
+              } else { 
+                vizElement.style.width='100%';
+                vizElement.style.height='1877px';
+              }                     
+              var scriptElement = document.createElement('script');                    
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+            </script>
+                <script>    
+    
+                    function swapImages(){
+                      var $active = $('#myGallery .active');
+                      var $next = ($('#myGallery .active').next().length > 0) ? $('#myGallery .active').next() : $('#myGallery img:first');
+                      $next.fadeIn(function(){         
+                        $active.removeClass('active');
+                        $next.addClass('active');
+                        $active.fadeOut();
+                      })
+                            
+                    }
+
+                    $(document).ready(function(){
+                      
+                      
+                        
+              
+                            
+                    
+                      $("#sample").click(function(){
+
+                        var height = $( window ).height();
+                      var width = $( window ).width();
+                      var size = width + ',' + height;
+                    var date = moment('January 21,2020');
+                        var date2 = moment('April 13, 2020');
+                  
+                        var locations2 = [];
+                        var count = 0 ;
+
+                        while(!date.isSame(date2))
+                        {
+                            locations2.push({"src": "https://public.tableau.com/views/CoronaImpact2/Dashboard2?%3Aembed=yes%3Atoolbar%3Dno&%3AshowVizHome=no&%3Adisplay_count=y&%3Adisplay_static_image=y&%3AbootstrapWhenNotified=true&Parameters.isDate="+date.format('YYYY-MM-DD')+"&%3Aformat=png&%3Asize="+size});
+                            count++;
+                            date = moment(date).add(1,'days');    
+                        }
+
+                        $("#myGallery").attr('width',width);
+                      $("#myGallery").attr('height',height);
+                      
+                      var img = '';
+                      
+                      locations2.forEach(function(element, index, array){
+                        
+                        if(index==0){         
+                          img = '<img src="'+element.src+'" class="active" />';
+                        } else {
+                          img = '<img src="'+element.src+'" />';         
+                        }
+                        
+                        $(img).appendTo("#myGallery");
+                        
+                      })
+                      
+                      setInterval('swapImages()', 200);
+                        
+                      });
+
+                      
+                    });
+                  </script>
+                
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+            <script src="bootstrap.min.js"></script>
+            
+        </body>
+    </html>
